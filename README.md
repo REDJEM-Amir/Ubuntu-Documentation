@@ -13,6 +13,10 @@
 ## Savoir qui est connecté sur le serveur 
 > who
 
+## Mises à jour système
+> freebsd-update fetch
+> freebsd-update install
+
 ## Ajouter un utilisateur
 > adduser nameuser
 
