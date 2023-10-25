@@ -1,4 +1,4 @@
-# Configuration server FreeBSD
+# Configuration serveur FreeBSD
 
 ## Effacer l'ancienne empreinte digitale
 > ssh-keygen -R ipserver
@@ -8,6 +8,7 @@
 
 ## Connexion ssh vers le serveur
 > ssh -lroot -p22 ipserver
+
 > psswdserver
 
 ## Savoir qui est connecté sur le serveur 
@@ -15,6 +16,7 @@
 
 ## Mises à jour système
 > freebsd-update fetch
+
 > freebsd-update install
 
 ## Ajouter un utilisateur
@@ -37,3 +39,24 @@
 
 ## Vérifier le groupe de l'utilisateur
 > groups username
+
+## Changer le port de connexion SSH
+### Ouvrez le fichier de configuration SSH
+> sudo nano /etc/ssh/sshd_config
+### Redémarrez le service SSH
+> sudo systemctl restart sshd
+### Vérifiez que le service SSH est actif
+> sudo systemctl status sshd
+
+## Désactivez le mot de passe du compte root
+> sudo passwd -l root
+
+## Désactiver la connexion root
+### Ouvrez le fichier de configuration SSH 
+> sudo nano /etc/ssh/sshd_config
+### Recherchez la ligne PermitRootLogin
+> PermitRootLogin no
+### Redémarrez le service SSH
+> sudo systemctl restart sshd
+
+## 
