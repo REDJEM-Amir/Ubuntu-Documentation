@@ -1,4 +1,4 @@
-# Configuration serveur FreeBSD
+# Configuration serveur Ubuntu
 
 ## Effacer l'ancienne empreinte digitale
 > ssh-keygen -R ipserver
@@ -9,15 +9,21 @@
 ## Connexion ssh vers le serveur
 > ssh -lroot -p22 ipserver
 
+
 > psswdserver
 
 ## Savoir qui est connecté sur le serveur 
 > who
 
 ## Mises à jour système
-> freebsd-update fetch
-
-> freebsd-update install
+### Mettez à jour la liste des paquets disponibles
+> sudo apt update
+### Mettez à jour les paquets installés
+> sudo apt upgrade
+### Pour mettre à jour le noyau et d'autres paquets
+> sudo apt dist-upgrade
+### Pour supprimer les paquets qui ne sont plus nécessaires
+> sudo apt autoremove
 
 ## Ajouter un utilisateur
 > adduser nameuser
