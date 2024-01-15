@@ -9,7 +9,6 @@
 ## Connexion ssh vers le serveur
 > ssh -lroot -p22 ipserver
 
-
 > psswdserver
 
 ## Savoir qui est connecté sur le serveur 
@@ -65,4 +64,5 @@
 ### Redémarrez le service SSH
 > sudo systemctl restart sshd
 
-## 
+## Générer le certificat HTTPS
+> sudo certbot certonly --manual --preferred-challenges=dns-01 --server https://acme-v02.api.letsencrypt.org/directory -d "*.arecode.fr" -d arecode.fr
