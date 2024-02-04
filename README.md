@@ -65,4 +65,10 @@
 > sudo systemctl restart sshd
 
 ## Générer le certificat HTTPS
+
+### Avec les sous domaine
 > sudo certbot certonly --manual --preferred-challenges=dns-01 --server https://acme-v02.api.letsencrypt.org/directory -d "*.arecode.fr" -d arecode.fr
+
+### Sans les sous domaine
+> sudo certbot certonly --manual --preferred-challenges=dns-01 --server https://acme-v02.api.letsencrypt.org/directory -d arecode.fr
+
